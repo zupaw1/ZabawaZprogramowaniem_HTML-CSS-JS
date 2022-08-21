@@ -1,0 +1,181 @@
+
+$color-text: #2f3640;
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-color: darkgray;
+  color: $color-text;
+  font-size: 16px;
+  line-height: 24px;
+}
+.main-title{
+    
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 + p{
+    font-size: 18px;
+    text-align: center;
+    
+}
+
+.wrapper {
+  width: 100vw;
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    background-color: lightgray;
+}
+
+.intro p {
+  margin: 30px 0;
+}
+.letter {
+  background-color: $color-letter;
+  width: 600px;
+  padding: 48px;
+  position: relative;  
+  max-width: 90vw;
+  margin: 5vh auto;
+  
+}
+
+.letter::before,
+.letter::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.letter::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.letter::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styluje elementy listy zadań */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  list-style-type: none;
+  
+  
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ustawia nieparzyste elementy listy na inny kolor (efekt zebry) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Ciemniejszy kolor tła po najechaniu myszką */
+ul li:hover {
+  background: #ddd;
+}
+
+/* Efekt wywołany po kliknięciu - zmienia kolor i powoduje przekreślenie tekstu */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Dodaje znacznik ukończenia zadania */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Styluje przycisk zamknięcia zadania */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Styl nagłówka */
+.header {
+  background-color: #02ac46;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+    border-radius: 20px;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Styluje pole do wpisywania treśći */
+input {
+  height: 44px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 60%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Styluje przycisk "Dodaj"  */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+    height: 44px;
+    line-height: 40px;
+    
+}
